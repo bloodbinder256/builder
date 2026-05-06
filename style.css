@@ -1,0 +1,245 @@
+:root {
+  --bg: #120d18;
+  --panel: #1f1728;
+  --panel-2: #2b2038;
+  --text: #f4ecff;
+  --muted: #c7b8d9;
+  --accent: #b98cff;
+  --accent-2: #74e4c3;
+  --wood: #8a552f;
+  --metal: #bfc3cc;
+  --wrap: #2b1a14;
+  --crystal: #8fe7ff;
+  --glow: rgba(185, 140, 255, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  background:
+    radial-gradient(circle at top left, rgba(185,140,255,0.2), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(116,228,195,0.14), transparent 28%),
+    var(--bg);
+  color: var(--text);
+}
+
+header {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: var(--muted);
+}
+
+main {
+  width: min(1200px, calc(100% - 30px));
+  margin: auto;
+  display: grid;
+  grid-template-columns: 350px 1fr 320px;
+  gap: 18px;
+}
+
+.card {
+  background: var(--panel);
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.card h2 {
+  margin: 0;
+  padding: 16px 20px;
+  background: rgba(255,255,255,0.04);
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.controls,
+.materials,
+.notes {
+  padding: 18px;
+}
+
+.control-group {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+}
+
+select,
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: var(--panel-2);
+  color: white;
+}
+
+input[type="range"] {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  border: 0;
+  padding: 14px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.stage {
+  position: relative;
+  height: 600px;
+  margin: 18px;
+  border-radius: 24px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at center, rgba(185,140,255,0.16), transparent 36%),
+    linear-gradient(180deg, #1b1424, #09070d);
+}
+
+.weapon-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weapon {
+  position: relative;
+  width: 34px;
+  height: 430px;
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.2), transparent 20%, rgba(0,0,0,0.25) 78%),
+    var(--wood);
+  box-shadow: 0 0 24px var(--glow);
+}
+
+.weapon.wand {
+  height: 260px;
+  width: 22px;
+}
+
+.weapon.twisted {
+  border-radius: 50% 40% 55% 45%;
+}
+
+.tip,
+.pommel {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--crystal);
+  box-shadow: 0 0 24px var(--crystal);
+}
+
+.tip {
+  top: -40px;
+  width: 60px;
+  height: 60px;
+  clip-path: polygon(50% 0, 100% 68%, 50% 100%, 0 68%);
+}
+
+.pommel {
+  bottom: -24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.band {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 58px;
+  height: 16px;
+  border-radius: 999px;
+  background: var(--metal);
+}
+
+.band:nth-child(1) { top: 16%; }
+.band:nth-child(2) { top: 38%; }
+.band:nth-child(3) { top: 68%; }
+
+.wrap {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 52px;
+  height: 90px;
+  border-radius: 14px;
+  background: repeating-linear-gradient(
+    -25deg,
+    var(--wrap) 0 8px,
+    #6a4232 8px 15px
+  );
+}
+
+.runes {
+  position: absolute;
+  inset: 80px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: rgba(255,255,255,0.7);
+}
+
+.vine {
+  position: absolute;
+  left: 50%;
+  top: 30px;
+  width: 76px;
+  height: 360px;
+  transform: translateX(-50%);
+  border-left: 7px solid #427044;
+  border-radius: 50%;
+}
+
+.blade {
+  position: absolute;
+  top: -110px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 110px;
+  background: linear-gradient(90deg, #fff, #aeb4bf, #666);
+  clip-path: polygon(50% 0, 100% 86%, 50% 100%, 0 86%);
+}
+
+.nameplate {
+  padding: 20px;
+  text-align: center;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+@media (max-width: 1050px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
