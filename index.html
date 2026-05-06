@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Staff & Wand Builder</title>
+
+  <!-- Replace this with your GitHub Pages CSS URL:
+       https://YOUR-USERNAME.github.io/YOUR-REPO/style.css -->
+  <link rel="stylesheet" href="https://bloodbinder256.github.io/builder/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Staff & Wand Builder</h1>
+    <p class="subtitle">Design staffs, wands, battle props, ritual focuses, and fantasy relics. The material list updates as you build.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Build Options</h2>
+      <div class="controls">
+        <div class="control-group">
+          <label for="itemName">Name your creation</label>
+          <input id="itemName" type="text" value="Moonlit Thorn Staff" />
+        </div>
+
+        <div class="control-group">
+          <label for="type">Type</label>
+          <select id="type">
+            <option value="staff">Full Staff</option>
+            <option value="wand">Wand</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="wood">Base material</label>
+          <select id="wood">
+            <option value="blackwood">Blackened wood</option>
+            <option value="birch">Birch</option>
+            <option value="redwood">Redwood</option>
+            <option value="bone">Bone ivory finish</option>
+            <option value="oak">Oak brown</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="shape">Shaft shape</label>
+          <select id="shape">
+            <option value="straight">Straight</option>
+            <option value="twisted">Twisted / gnarled</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="crystal">Crystal color</label>
+          <select id="crystal">
+            <option value="#8fe7ff">Blue moonstone</option>
+            <option value="#b98cff">Amethyst</option>
+            <option value="#74e4c3">Emerald glass</option>
+            <option value="#ff8fa3">Rose quartz</option>
+            <option value="#f7d56b">Citrine</option>
+            <option value="#f7f2ff">Clear quartz</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="metal">Metal bands</label>
+          <select id="metal">
+            <option value="#bfc3cc">Silver</option>
+            <option value="#d9b45c">Antique gold</option>
+            <option value="#9a6148">Copper</option>
+            <option value="#50515a">Dark steel</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label>Add-ons</label>
+          <div class="check-grid">
+            <label class="check"><input id="bandsToggle" type="checkbox" checked /> Metal bands</label>
+            <label class="check"><input id="wrapToggle" type="checkbox" checked /> Leather grip wrap</label>
+            <label class="check"><input id="runesToggle" type="checkbox" checked /> Carved glowing runes</label>
+            <label class="check"><input id="vineToggle" type="checkbox" /> Vine or bone spiral</label>
+            <label class="check"><input id="bladeToggle" type="checkbox" /> Toy hidden blade / spear tip</label>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label for="glow">Glow strength: <span id="glowValue">35</span>%</label>
+          <input id="glow" type="range" min="0" max="100" value="35" />
+        </div>
+
+        <button id="randomize">Randomize Build</button>
+      </div>
+    </section>
+
+    <section class="card preview-card">
+      <h2>Live Preview</h2>
+      <div class="stage">
+        <div class="stars"></div>
+        <div class="moon"></div>
+        <div class="weapon-wrap">
+          <div id="weapon" class="weapon blackwood">
+            <div id="blade" class="blade"></div>
+            <div id="tip" class="tip"></div>
+            <div id="bands" class="bands">
+              <div class="band"></div>
+              <div class="band"></div>
+              <div class="band"></div>
+            </div>
+            <div id="wrap" class="wrap"></div>
+            <div id="runes" class="runes"><span>ᚨ</span><span>ᛉ</span><span>ᛟ</span><span>ᚱ</span></div>
+            <div id="vine" class="vine"></div>
+            <div id="pommel" class="pommel"></div>
+          </div>
+        </div>
+      </div>
+      <div class="nameplate">
+        <strong id="displayName">Moonlit Thorn Staff</strong><br />
+        <span id="description">A blackened full staff with blue moonstone crystal, silver bands, leather grip, and glowing runes.</span>
+      </div>
+    </section>
+
+    <aside class="card">
+      <h2>Material List</h2>
+      <div class="materials">
+        <ul id="materialsList"></ul>
+        <div class="pill-row" id="tags"></div>
+      </div>
+      <h2>Build Notes</h2>
+      <div class="notes">
+        <p><strong>Safety:</strong> Keep blade add-ons decorative, dull, removable, and convention-safe. Use foam, plastic, or rounded wood.</p>
+        <p><strong>Finish idea:</strong> Dry-brush metallic highlights onto raised bands and edges, then use dark washes in grooves to fake depth.</p>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Replace this with your GitHub Pages JS URL:
+       https://YOUR-USERNAME.github.io/YOUR-REPO/script.js -->
+  <script src="https://bloodbinder256.github.io/builder/script.js"></script>
+</body>
+</html>
